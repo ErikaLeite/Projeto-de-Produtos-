@@ -1,4 +1,5 @@
 ﻿using System;
+using Projeto_de_Produtos_.classes;
 
 namespace Projeto_de_Produtos_
 {
@@ -6,7 +7,9 @@ namespace Projeto_de_Produtos_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Usuario user = new Usuario();
+            // user.ListarUser();
+
         }
     }
 }
