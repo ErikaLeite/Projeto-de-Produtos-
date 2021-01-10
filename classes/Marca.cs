@@ -6,11 +6,11 @@ namespace Projeto_de_Produtos_.classes
     public class Marca
     {
         int Codigo { get; set; }
-        string NomeMarca { get; set; }
+        public string NomeMarca { get; set; }
         DateTime DataCadastro { get; set; }        
         List<Marca> ListaMarcas { get; set; }
         
-        public void Cadastrar()
+        public Marca Cadastrar()
         {
             Marca novaMarca = new Marca();
             //é necessário fazer a instância de uma nova marca dentro do método para que seja possível inseri-la à Lista de Marcas
@@ -23,7 +23,9 @@ namespace Projeto_de_Produtos_.classes
 
             novaMarca.DataCadastro = DateTime.UtcNow;  
 
-            ListaMarcas.Add(novaMarca);                   
+            ListaMarcas.Add(novaMarca);
+
+            return novaMarca;                   
         }
 
         public void Listar()

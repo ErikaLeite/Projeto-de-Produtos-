@@ -7,8 +7,10 @@ namespace Projeto_de_Produtos_
     {
         static void Main(string[] args)
         {
-            Usuario user = new Usuario();
-            // user.ListarUser();
+            Produto item = new Produto();
+            item.CadastrarItem();
+            item.ListarItem();
+            
 
         }
     }

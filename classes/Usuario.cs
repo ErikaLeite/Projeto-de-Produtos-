@@ -6,7 +6,7 @@ namespace Projeto_de_Produtos_.classes
     public class Usuario
     {
         int CodigoUser { get; set; }
-        string NomeUser { get; set; }
+        public string NomeUser { get; set; }
         string Email { get; set; }
         string Senha { get; set; }
         DateTime DataCadastroUser { get; set; }
@@ -14,10 +14,14 @@ namespace Projeto_de_Produtos_.classes
         //Incrementar uma lista para melhorar o Método DeletarUser
         // List<Usuario> listaUser = new List <Usuario>();
 
+        // public Usuario()
+        // {
+        //     //cadastrar um usuário automaticamente quando a classe for instanciado
+        //     CadastrarUser();
+        // }
         public Usuario()
         {
-            //cadastrar um usuário automaticamente quando a classe for instanciado
-            CadastrarUser();
+            UsuarioPadrao();
         }
         public Usuario (int _codUser, string _nomeUser, string _email, string _senha)
         {
@@ -31,6 +35,7 @@ namespace Projeto_de_Produtos_.classes
         public void CadastrarUser()
         {
             // Usuario user = new Usuario();
+            
             Console.WriteLine("Digite seu nome completo: ");
             NomeUser = Console.ReadLine();
             
@@ -41,8 +46,17 @@ namespace Projeto_de_Produtos_.classes
             Senha = Console.ReadLine();
 
             DataCadastroUser = DateTime.UtcNow;
-
+            
             // listaUser.Add(user);                    
+        }
+        public Usuario UsuarioPadrao()
+        {
+            Usuario usuarioPadrao = new Usuario();
+            usuarioPadrao.NomeUser = "Admin";
+            usuarioPadrao.Email = "admin@admin.com";
+            usuarioPadrao.Senha = "123456";
+
+            return usuarioPadrao;
         }
 
         public void DeletarUser()
