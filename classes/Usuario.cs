@@ -7,18 +7,10 @@ namespace Projeto_de_Produtos_.classes
     {
         int CodigoUser { get; set; }
         public string NomeUser { get; set; }
-        string Email { get; set; }
-        string Senha { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
         DateTime DataCadastroUser { get; set; }
 
-        //Incrementar uma lista para melhorar o Método DeletarUser
-        // List<Usuario> listaUser = new List <Usuario>();
-
-        // public Usuario()
-        // {
-        //     //cadastrar um usuário automaticamente quando a classe for instanciado
-        //     CadastrarUser();
-        // }
         public Usuario()
         {
             UsuarioPadrao();
@@ -32,52 +24,36 @@ namespace Projeto_de_Produtos_.classes
             DataCadastroUser = DateTime.UtcNow;
         }
         
-        public void CadastrarUser()
-        {
-            // Usuario user = new Usuario();
+        // public void CadastrarUser()
+        // {            
+        //     Console.WriteLine("Digite seu nome completo: ");
+        //     NomeUser = Console.ReadLine();
             
-            Console.WriteLine("Digite seu nome completo: ");
-            NomeUser = Console.ReadLine();
+        //     Console.WriteLine("Digite seu e-mail:");
+        //     Email = Console.ReadLine();
             
-            Console.WriteLine("Digite seu e-mail:");
-            Email = Console.ReadLine();
-            
-            Console.WriteLine("Digite uma senha:");
-            Senha = Console.ReadLine();
+        //     Console.WriteLine("Digite uma senha:");
+        //     Senha = Console.ReadLine();
 
+        //     DataCadastroUser = DateTime.UtcNow;                 
+        // }
+
+        public void UsuarioPadrao()
+        {
+            NomeUser = "Admin";
+            Email = "admin@admin.com";
+            Senha = "123456";
             DataCadastroUser = DateTime.UtcNow;
-            
-            // listaUser.Add(user);                    
-        }
-        public Usuario UsuarioPadrao()
-        {
-            Usuario usuarioPadrao = new Usuario();
-            usuarioPadrao.NomeUser = "Admin";
-            usuarioPadrao.Email = "admin@admin.com";
-            usuarioPadrao.Senha = "123456";
-
-            return usuarioPadrao;
         }
 
         public void DeletarUser()
         {   
-            // Usuario userDelete = new Usuario();
             NomeUser         = "";
             Email            = "";
             Senha            = "";
             DataCadastroUser = DateTime.Parse("0000-00-00t00:00:00");
-            //Formato DateTime: AAAA-MM-DDTHH:MM-SS
-
-            // listaUser.Remove(userDelete);
+            //Formato DateTime: AAAA-MM-DDTHH:MM-SS            
         }
 
-        // public void ListarUser()
-        // {
-        //     foreach (Usuario user in listaUser)
-        //     {
-        //         Console.WriteLine($"Nome Usuário: {user.NomeUser} \nE-mail cadastrado: {user.Email} \nSenha Usuário: ****** \nData do Cadastro: {user.DataCadastroUser}");
-                
-        //     }
-        // }  
     }
 }

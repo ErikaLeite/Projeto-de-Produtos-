@@ -8,7 +8,7 @@ namespace Projeto_de_Produtos_.classes
         int Codigo { get; set; }
         public string NomeMarca { get; set; }
         DateTime DataCadastro { get; set; }        
-        List<Marca> ListaMarcas { get; set; }
+        public List<Marca> ListaMarcas = new List<Marca>();
         
         public Marca Cadastrar()
         {

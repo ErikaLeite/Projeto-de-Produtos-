@@ -7,10 +7,8 @@ namespace Projeto_de_Produtos_
     {
         static void Main(string[] args)
         {
-            Produto item = new Produto();
-            item.CadastrarItem();
-            item.ListarItem();
-            
+            Login app = new Login();
+                       
 
         }
     }
